@@ -1,0 +1,7 @@
+body { font-family: Inter, Arial, sans-serif; background: #f6f8fb; color: #222; }
+.container { max-width: 900px; margin: 40px auto; background: white; padding: 24px; border-radius: 10px; box-shadow: 0 6px 18px rgba(20,30,60,0.08); }
+h1 { margin-top: 0; }
+.alert { background: #fff3cd; padding: 10px; border-radius: 6px; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px 10px; border: 1px solid #eee; }
+.table-container { overflow-x: auto; }

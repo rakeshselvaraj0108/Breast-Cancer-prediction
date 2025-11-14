@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Map your CSV columns</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Map Columns</h1>
+    <p>Select which uploaded column corresponds to each expected feature. Choose <strong>NONE</strong> if not available.</p>
+    <form action="/do_map" method="post">
+      <input type="hidden" name="filename" value="{{ filename }}">
+      <table>
+        <tr><th>Expected Feature</th><th>Map to uploaded column</th></tr>
+        {% for feat in expected_features %}
+        <tr>
+          <td>{{ feat }}</td>
+          <td>
+            <select name="{{ feat }}">
+              <option value="NONE">-- NONE --</option>
+              {% for col in uploaded_cols %}
+                <option value="{{ col }}">{{ col }}</option>
+              {% endfor %}
+            </select>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br>
+      <input type="submit" value="Predict with this mapping">
+    </form>
+    <p><a href="/">← Back</a></p>
+  </div>
+</body>
+</html>

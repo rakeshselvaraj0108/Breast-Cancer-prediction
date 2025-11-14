@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Prediction Results</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Prediction Results</h1>
+    <div class="table-container">
+      {{ tables|safe }}
+    </div>
+    {% if filename %}
+      <p><a href="{{ url_for('download_file', filename=filename) }}">Download full CSV with predictions</a></p>
+    {% endif %}
+    <p><a href="/">← New prediction</a></p>
+  </div>
+</body>
+</html>

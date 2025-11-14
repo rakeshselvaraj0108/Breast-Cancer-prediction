@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Breast Cancer Predictor</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Breast Cancer Prediction App</h1>
+    {% if not model_ready %}
+      <div class="alert">Model artifacts not found. Run <code>python model/train_model.py</code> to create baseline model (or place your model files in <code>model_files/</code>).</div>
+    {% endif %}
+    <p>AI-Based Breast Cancer Diagnosis Tool</p>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".csv" required>
+      <br><br>
+      <input type="submit" value="Upload & Predict">
+    </form>
+    <hr>
+   
+  </div>
+</body>
+</html>
